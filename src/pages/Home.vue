@@ -11,11 +11,11 @@
             <i class="el-icon-menu"></i>
             <span slot="title">首页</span>
           </el-menu-item>
-          <el-menu-item index="/Home">
+          <el-menu-item index="/Home/article">
             <i class="el-icon-tickets"></i>
-            <span slot="title">舆情文章</span>
+            <span slot="title">文章</span>
           </el-menu-item>
-          <el-menu-item index="/Home">
+          <!-- <el-menu-item index="/Home">
             <i class="el-icon-view"></i>
             <span slot="title">我的监听</span>
           </el-menu-item>
@@ -46,7 +46,7 @@
           <el-menu-item index="/Home">
             <i class="el-icon-search"></i>
             <span slot="title">全文检索</span>
-          </el-menu-item>
+          </el-menu-item> -->
         </el-menu>
       </div>
         <div class="main-col">

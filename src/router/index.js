@@ -8,10 +8,16 @@ import collectionChannel from '../pages/collectionChannel'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
+  base: 'app',
   routes: [
+    { 
+      path: '',
+      redirect: '/login',
+    },
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: login
     },
@@ -24,6 +30,11 @@ export default new Router({
         name:'homepage',
         component:homepage
       },
+      {
+        path: '/Home/article',
+        name: 'article',
+        component:require('../pages/article').default
+      },
         {
           path:'/Home/collectionChannel',
           name:'collectionChannel',
@@ -32,3 +43,18 @@ export default new Router({
     }
   ]
 })
+
+router.onError(() => {
+  console.log('router error')
+})
+router.beforeEach((to, from, next) => {
+  console.log(to,from)
+  /* if(to.name === "homepage"){
+    next(error)
+  } else {
+   next()
+  } */
+  next()
+})
+
+export default router
